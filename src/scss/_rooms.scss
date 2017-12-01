@@ -1,0 +1,44 @@
+
+//****************************************************** Variables ****//
+$room-form-height: 24px;
+
+
+//******************************************************** Styles ****//
+.room {
+  background-color: $room-color;
+  margin: 10px 0;
+  h3 {
+    color: $light-text;
+    font-weight: 300;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+.room-form {
+  display: flex;
+  font-size: 1.2rem;
+  input {
+    flex: 3;
+    height: $room-form-height;
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+  button {
+    flex: 1;
+    background-color: #8B575C;
+    color: $light-text;
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+}
+
+.room-body {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.room-sources,
+.room-devices {
+  flex: 1;
+}

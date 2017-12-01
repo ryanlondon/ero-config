@@ -1,0 +1,47 @@
+header {
+  background-color: $header-color;
+  color: $light-text;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $document-padding;
+
+  h1, li {
+    font-weight: 300;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  ul > li {
+    margin: 10px;
+    display: inline-block;
+    list-style-type: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    padding: 0 3px;
+    text-decoration: none;
+
+    &:visited {
+      color: $light-text;
+    }
+
+    &:hover {
+      color: $header-highlight-text;
+    }
+
+    &.active {
+      padding: 3px 3px 5px 3px;
+      color: $header-highlight-text;
+      border-bottom: 1px solid $header-highlight-text;
+      border-top: 1px solid $header-highlight-text;
+      transition: all 0.4s ease-out;
+    } 
+  }
+}
