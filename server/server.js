@@ -104,9 +104,10 @@ router.route('/roomUnsubscribe')
 //********************************* XML Function Routes */
 router.route('/xml/save')
   .get(
+    xmlController.extractDB,
     xmlController.saveXML,
     (req, res) => {
-      console.log('Save XML request');
+      res.status(200).json({ message: 'XML saved' })
     });
 
 app.use('/api', router).listen(3000);

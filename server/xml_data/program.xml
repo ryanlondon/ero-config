@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<program>
+  <rooms>
+    <room id="1" name="Living Room"/>
+    <room id="2" name="Garage"/>
+    <room id="3" name="Patio"/>
+  </rooms>
+  <sources>
+    <source id="1" name="Satellite TV"/>
+    <source id="2" name="Netflix"/>
+    <source id="3" name="Apple TV"/>
+    <source id="4" name="CD Player"/>
+  </sources>
+  <devices>
+    <device id="1" name="Climate Control"/>
+    <device id="2" name="Security System"/>
+    <device id="3" name="Solar Panels"/>
+    <device id="4" name="Lighting Control"/>
+    <device id="5" name="My Cool Device"/>
+  </devices>
+</program>

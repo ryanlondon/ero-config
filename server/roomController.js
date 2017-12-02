@@ -7,9 +7,9 @@ const roomController = {};
 
 roomController.getAllRooms = (next) => {
   Room.find({})
-  .populate('sources', ['name'])
-  .populate('devices', ['name'])
-  .exec(next);
+    .populate('sources', ['name'])
+    .populate('devices', ['name'])
+    .exec(next);
 };
 
 roomController.addRoom = (req, res, next) => {
