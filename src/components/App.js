@@ -66,7 +66,9 @@ class App extends React.Component {
             <Route path="/" exact 
               render={() => (
                 <Rooms
-                  rooms={this.state.rooms} 
+                  rooms={this.state.rooms}
+                  sources={this.state.sources}
+                  devices={this.state.devices} 
                   add={this.add} 
                   delete={this.delete}
                 />
@@ -89,7 +91,6 @@ class App extends React.Component {
                   delete={this.delete}
                 />
               )}
-              
             />
           </div>
         </div>

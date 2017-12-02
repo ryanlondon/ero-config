@@ -55,7 +55,8 @@ button {
   }
 }
 
-input:focus {
+input:focus,
+select:focus {
   outline: 0;
 }
 

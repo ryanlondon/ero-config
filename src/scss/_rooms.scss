@@ -12,7 +12,7 @@
 
 .room-body {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
 .room-sources,
@@ -20,7 +20,10 @@
   flex: 1;
   padding: 10px;
   h4 {
-    margin: 0 0 10px 0;
+    margin: 0;
+  }
+  ul {
+    margin: 0;
   }
 }
 
@@ -28,8 +31,23 @@
   border-right: 1px solid #333;
 }
 
-.room-header {
+.room-header,
+.room-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.room-items {
+  padding: 0;
+}
+
+.room-item {
+  padding: 4px;
+  &:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+  &:nth-of-type(even) {
+    background-color: rgba(100, 100, 100, 0.15);
+  }
 }
