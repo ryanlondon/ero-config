@@ -1,12 +1,12 @@
 {
-  "name": "mern-tutorial",
+  "name": "ero-config",
   "version": "1.0.0",
-  "description": "a tutorial to learn the mern stack",
+  "description": "Configuration tool for Ero framework",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack -w"
   },
   "author": "Ryan London",
   "license": "ISC",

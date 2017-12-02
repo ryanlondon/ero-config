@@ -26,7 +26,7 @@ $room-form-height: 24px;
   }
   button {
     flex: 1;
-    background-color: #8B575C;
+    background-color: rgb(102, 139, 93);
     color: $light-text;
     display: inline-block;
     font-size: 0.9rem;
@@ -41,4 +41,28 @@ $room-form-height: 24px;
 .room-sources,
 .room-devices {
   flex: 1;
+  padding: 10px;
+  h4 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.room-sources {
+  border-right: 1px solid #333;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    margin-right: 10px;
+    padding: 4px;
+    background-color: rgb(141, 60, 54);
+    color: $light-text;
+    &:hover {
+      background-color: rgb(180, 106, 102);
+    }
+  }
 }

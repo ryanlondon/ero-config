@@ -1,1 +1,1 @@
-# ero-config
+# EroConfig
