@@ -55,4 +55,12 @@ roomController.subscribeToItem = (req, res, next) => {
   });
 };
 
+roomController.unsubscribeFromItem = (req, res, next) => {
+  Room.findOne({ name: req.body.roomName }, (err, room) => {
+    if (err) console.error('Error finding room during unsubscribe:', err);
+    room[req.body.type].pull(res.locals.item);
+    room.save(next);
+  });
+};
+
 module.exports = roomController;

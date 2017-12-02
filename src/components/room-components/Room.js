@@ -2,8 +2,6 @@ import React from 'react';
 
 const Room = (props) => {
 
-  console.log(props.subscribedSources, props.subscribedDevices);
-
   const sources = props.sources.map((source, i) => {
     return <option key={i} value={source.name}>{source.name}</option>;
   });
@@ -13,11 +11,22 @@ const Room = (props) => {
   });
 
   const subscribedSources = props.subscribedSources.map((source, i) => {
-    return <li key={i} className="room-item">{source.name}<button>Delete</button></li>
+    return (
+      <li key={i} className="room-item">
+        {source.name}
+        <button onClick={() => {props.unsubscribe('sources', props.name, source.name)}}>Delete</button>
+      </li>
+    )
   });
 
   const subscribedDevices = props.subscribedDevices.map((device, i) => {
-    return <li key={i} className="room-item">{device.name}<button>Delete</button></li>
+    return (
+      <li key={i} className="room-item">
+        {device.name}
+        <button
+          onClick={() => {props.unsubscribe('devices', props.name, device.name)}}>Delete</button>
+      </li>
+    )
   });
 
   const handleSelect = (e, type) => {

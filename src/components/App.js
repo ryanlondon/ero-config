@@ -63,6 +63,20 @@ class App extends React.Component {
         console.error(err);
       })
     };
+
+    this.unsubscribe = (type, roomName, itemName) => {
+      axios.put('api/roomUnsubscribe', {
+        type: type,
+        roomName: roomName,
+        itemName: itemName,
+      })
+      .then(() => {
+        this.getAll('rooms');
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+    };
   }
 
   componentDidMount() {
@@ -70,6 +84,10 @@ class App extends React.Component {
     this.getAll('sources');
     this.getAll('devices');
   }
+
+  // componentDidUpdate() {
+  //   this.getAll('rooms');
+  // }
 
   render() {
     return (
@@ -81,11 +99,12 @@ class App extends React.Component {
               render={() => (
                 <Rooms
                   rooms={this.state.rooms}
-                  sources={this.state.sources}
-                  devices={this.state.devices}
                   add={this.add} 
                   delete={this.delete}
+                  sources={this.state.sources}
+                  devices={this.state.devices}
                   subscribe={this.subscribe}
+                  unsubscribe={this.unsubscribe}
                 />
               )} 
             />

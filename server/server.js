@@ -91,4 +91,13 @@ router.route('/roomSubscribe')
     }
   );
 
+router.route('/roomUnsubscribe')
+  .put(
+    roomController.getItem,
+    roomController.unsubscribeFromItem,
+    (req, res) => {
+      res.status(200).json({ message: 'Room unsubscribed from item' });
+    }
+  )
+
 app.use('/api', router).listen(3000);
