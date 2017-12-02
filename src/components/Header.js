@@ -9,6 +9,7 @@ const Header = (props) => {
         <li><Link onClick={() => {props.setTabId(0)}} className={props.tabId === 0 ? 'active' : ''} to="/">Rooms</Link></li>
         <li><Link onClick={() => {props.setTabId(1)}} className={props.tabId === 1 ? 'active' : ''} to="/sources">Sources</Link></li>
         <li><Link onClick={() => {props.setTabId(2)}} className={props.tabId === 2 ? 'active' : ''} to="/devices">Devices</Link></li>
+        <li><button onClick={props.saveXML}>Save XML</button></li>
       </ul>
     </header>
   );

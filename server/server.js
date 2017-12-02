@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const roomController = require('./roomController');
 const sourceController = require('./sourceController');
 const deviceController = require('./deviceController');
+const xmlController = require('./xmlController');
 
 const app = express();
 const router = express.Router();
@@ -99,5 +100,13 @@ router.route('/roomUnsubscribe')
       res.status(200).json({ message: 'Room unsubscribed from item' });
     }
   )
+
+//********************************* XML Function Routes */
+router.route('/xml/save')
+  .get(
+    xmlController.saveXML,
+    (req, res) => {
+      console.log('Save XML request');
+    });
 
 app.use('/api', router).listen(3000);

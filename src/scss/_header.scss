@@ -44,4 +44,15 @@ header {
       transition: all 0.4s ease-out;
     } 
   }
+
+  button {
+    padding: 5px 10px;
+    background-color: #479aa3;
+    color: $light-text;
+    font-size: 0.8rem;
+    font-family: $primary-font-stack;
+    &:hover {
+      background-color: $header-highlight-text;
+    }
+  }
 }

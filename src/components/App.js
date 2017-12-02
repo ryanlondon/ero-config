@@ -77,6 +77,10 @@ class App extends React.Component {
         console.error(err);
       })
     };
+
+    this.saveXML = () => {
+      axios.get('api/xml/save');
+    };
   }
 
   componentDidMount() {
@@ -85,15 +89,15 @@ class App extends React.Component {
     this.getAll('devices');
   }
 
-  // componentDidUpdate() {
-  //   this.getAll('rooms');
-  // }
+  componentDidUpdate() {
+    () => {this.getAll('rooms')};
+  }
 
   render() {
     return (
       <BrowserRouter>
         <div className="wrapper">
-          <Header setTabId={this.setTabId} tabId={this.state.tabId} />
+          <Header setTabId={this.setTabId} tabId={this.state.tabId} saveXML={this.saveXML} />
           <div className="main">
             <Route path="/" exact 
               render={() => (
