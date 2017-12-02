@@ -49,6 +49,20 @@ class App extends React.Component {
         console.error(err);
       });
     };
+
+    this.subscribe = (type, roomName, itemName) => {
+      axios.put('api/roomSubscribe', {
+        type: type,
+        roomName: roomName,
+        itemName: itemName,
+      })
+      .then(() => {
+        console.log(`${roomName} subscribed to ${type} => ${itemName}`)
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+    };
   }
 
   componentDidMount() {
@@ -68,9 +82,10 @@ class App extends React.Component {
                 <Rooms
                   rooms={this.state.rooms}
                   sources={this.state.sources}
-                  devices={this.state.devices} 
+                  devices={this.state.devices}
                   add={this.add} 
                   delete={this.delete}
+                  subscribe={this.subscribe}
                 />
               )} 
             />

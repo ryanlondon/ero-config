@@ -1,9 +1,5 @@
 import React from 'react';
 
-const handleSelect = (e) => {
-  console.log(e.target.value);
-};
-
 const Room = (props) => {
 
   const sources = props.sources.map((source, i) => {
@@ -14,6 +10,10 @@ const Room = (props) => {
     return <option key={i} value={device.name}>{device.name}</option>;
   });
 
+  const handleSelect = (e, type) => {
+    props.subscribe(type, props.name, e.target.value);
+  };
+
   return (
     <div className="room">
       <div className="room-header">
@@ -23,7 +23,7 @@ const Room = (props) => {
       <div className="room-body">
         <div className="room-sources">
           <h4>Sources</h4>
-          <select onChange={handleSelect}>
+          <select onChange={(e) => {handleSelect(e, 'sources')}}>
             <option defaultValue="--" hidden>Add a source</option>
             {sources}
           </select>
@@ -35,7 +35,7 @@ const Room = (props) => {
         </div>
         <div className="room-devices">
           <h4>Devices</h4>
-          <select onChange={handleSelect}>
+          <select onChange={(e) => {handleSelect(e, 'devices')}}>
             <option defaultValue="--" hidden>Add a device</option>
             {devices}
           </select>

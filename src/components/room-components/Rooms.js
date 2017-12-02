@@ -10,6 +10,7 @@ const Rooms = (props) => {
       sources={props.sources}
       devices={props.devices}
       delete={props.delete}
+      subscribe={props.subscribe}
     />
   });
 
