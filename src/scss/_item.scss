@@ -1,0 +1,20 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  h3 {
+    color: $light-text;
+    font-weight: 300;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+.source {
+ background-color: $source-color;
+}
+
+.device {
+  background-color: $device-color;
+}

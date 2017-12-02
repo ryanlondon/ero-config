@@ -1,15 +1,22 @@
 
 //****************************************************** Variables ****//
 
-$light-text: rgb(248, 251, 255);
+$light-text: #f8fbff;
 
-$header-color: rgb(53, 53, 73);
-$header-highlight-text: rgb(98, 205, 219);
+$header-color: #353549;
+$header-highlight-text: #62cddb;
 
-$main-content-color: rgb(245, 245, 245);
-$main-content-text: rgb(54, 54, 63);
+$main-content-color: #f5f5f5;
+$main-content-text: #36363f;
 
-$room-color: #3a3335;
+$room-color: #4b4133;
+$source-color: #213841;
+$device-color: #4a7460;
+
+$confirm-button-color: #4e7744;
+$confirm-button-hover: #678d5d;
+$delete-button-color: #8d3c36;
+$delete-button-hover: #a55955;
 
 $primary-font-stack: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
@@ -21,6 +28,7 @@ $document-padding: 20px;
 @import '_header';
 @import '_main';
 @import '_rooms';
+@import '_item';
 
 //************************************************ General Styles ****//
 
@@ -34,6 +42,16 @@ button {
   border: none;
   &:focus {
     outline: 0;
+  }
+}
+
+.delete {
+  margin-right: 10px;
+  padding: 4px 14px;
+  background-color: $delete-button-color;
+  color: $light-text;
+  &:hover {
+    background-color: $delete-button-hover;
   }
 }
 
@@ -53,12 +71,12 @@ input:focus {
   }
   button {
     flex: 1;
-    background-color: rgb(78, 119, 68);
+    background-color: $confirm-button-color;
     color: $light-text;
     display: inline-block;
     font-size: 0.9rem;
     &:hover {
-      background-color: rgb(103, 141, 93);
+      background-color: $confirm-button-hover;
     }
   }
 }

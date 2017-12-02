@@ -21,7 +21,7 @@ class App extends React.Component {
     };
 
     this.getAll = (route) => {
-      axios.get('/api/' + route).then(res => {
+      axios.get('api/' + route).then(res => {
         this.setState({ [route]: res.data });
       });
     };

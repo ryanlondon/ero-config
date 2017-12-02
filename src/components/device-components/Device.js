@@ -2,9 +2,9 @@ import React from 'react';
 
 const Device = (props) => {
   return (
-    <div className="device">
+    <div className="item device">
       <h3>{props.name}</h3>
-      <button onClick={() => {props.delete('devices', props.name)}}>Delete</button>
+      <button className="delete" onClick={() => {props.delete('devices', props.name)}}>Delete</button>
     </div>
   );
 }

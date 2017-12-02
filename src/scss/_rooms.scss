@@ -32,14 +32,4 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  button {
-    margin-right: 10px;
-    padding: 4px 14px;
-    background-color: rgb(141, 60, 54);
-    color: $light-text;
-    &:hover {
-      background-color: rgb(180, 106, 102);
-    }
-  }
 }

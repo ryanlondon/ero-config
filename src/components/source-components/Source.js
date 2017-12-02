@@ -2,9 +2,9 @@ import React from 'react';
 
 const Source = (props) => {
   return (
-    <div className="source">
+    <div className="item source">
       <h3>{props.name}</h3>
-      <button onClick={() => {props.delete('sources', props.name)}}>Delete</button>
+      <button className="delete" onClick={() => {props.delete('sources', props.name)}}>Delete</button>
     </div>
   );
 }
