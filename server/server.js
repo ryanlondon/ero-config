@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const roomController = require('./roomController');
 const sourceController = require('./sourceController');
-// const deviceController = require('./deviceController');
+const deviceController = require('./deviceController');
 
 const app = express();
 const router = express.Router();
@@ -58,5 +58,27 @@ router.route('/sources')
       res.status(200).json(true);
     }
   );
+
+//************************************* Devices API Routes */
+router.route('/devices')
+.get((req, res) => {
+  deviceController.getAllDevices((err, devices) => {
+    res.status(200).json(devices);
+  });
+})
+
+.post(
+  deviceController.addDevice,
+  (req, res) => {
+    res.status(200).json(res.locals.device);
+  }
+)
+
+.delete(
+  deviceController.deleteDevice,
+  (req, res) => {
+    res.status(200).json(true);
+  }
+);
 
 app.use('/api', router).listen(3000);

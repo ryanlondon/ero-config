@@ -4,7 +4,7 @@ const Source = (props) => {
   return (
     <div className="source">
       <h3>{props.name}</h3>
-      <button onClick={() => {props.deleteSource(props.name)}}>Delete</button>
+      <button onClick={() => {props.delete('sources', props.name)}}>Delete</button>
     </div>
   );
 }

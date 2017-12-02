@@ -7,13 +7,13 @@ const Rooms = (props) => {
     return <Room 
       key={i}
       name={room.name} 
-      deleteRoom={props.deleteRoom}
+      delete={props.delete}
     />
   });
 
   return (
     <div className="rooms">
-      <RoomForm addRoom={props.addRoom} /> 
+      <RoomForm add={props.add} /> 
       {rooms}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SourceForm extends React.Component {
+class DeviceForm extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -12,7 +12,7 @@ class SourceForm extends React.Component {
     };
 
     this.handleSubmit = (e) => {
-      this.props.add('sources', this.state.value);
+      this.props.add('devices', this.state.value);
       this.setState({ value: '' });
       this.input.value = '';
       e.preventDefault();
@@ -21,17 +21,17 @@ class SourceForm extends React.Component {
 
   render() {
     return (
-      <form className="form source-form" onSubmit={this.handleSubmit}>
+      <form className="form device-form" onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange} 
           ref={(input) => {this.input = input}} 
           type="text" 
-          placeholder="Add a source" 
+          placeholder="Add a device" 
         />
-        <button type="submit">Add Source</button>
+        <button type="submit">Add Device</button>
       </form>
     );
   }
 }
 
-export default SourceForm;
+export default DeviceForm;

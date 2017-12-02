@@ -1,9 +1,4 @@
 
-//****************************************************** Variables ****//
-$room-form-height: 24px;
-
-
-//******************************************************** Styles ****//
 .room {
   background-color: $room-color;
   margin: 10px 0;
@@ -12,24 +7,6 @@ $room-form-height: 24px;
     font-weight: 300;
     margin: 0;
     padding: 10px;
-  }
-}
-
-.room-form {
-  display: flex;
-  font-size: 1.2rem;
-  input {
-    flex: 3;
-    height: $room-form-height;
-    margin-right: 10px;
-    font-size: 0.9rem;
-  }
-  button {
-    flex: 1;
-    background-color: rgb(102, 139, 93);
-    color: $light-text;
-    display: inline-block;
-    font-size: 0.9rem;
   }
 }
 
@@ -58,7 +35,7 @@ $room-form-height: 24px;
 
   button {
     margin-right: 10px;
-    padding: 4px;
+    padding: 4px 14px;
     background-color: rgb(141, 60, 54);
     color: $light-text;
     &:hover {

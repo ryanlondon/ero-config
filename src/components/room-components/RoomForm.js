@@ -12,7 +12,7 @@ class RoomForm extends React.Component {
     };
 
     this.handleSubmit = (e) => {
-      this.props.addRoom(this.state.value);
+      this.props.add('rooms', this.state.value);
       this.setState({ value: '' });
       this.input.value = '';
       e.preventDefault();
@@ -21,7 +21,7 @@ class RoomForm extends React.Component {
 
   render() {
     return (
-      <form className="room-form" onSubmit={this.handleSubmit}>
+      <form className="form room-form" onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange} 
           ref={(input) => {this.input = input}} 

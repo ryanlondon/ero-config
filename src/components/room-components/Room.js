@@ -5,7 +5,7 @@ const Room = (props) => {
     <div className="room">
       <div className="room-header">
         <h3>{props.name}</h3>
-        <button onClick={() => {props.deleteRoom(props.name)}}>Delete</button>
+        <button onClick={() => {props.delete('rooms', props.name)}}>Delete</button>
       </div>
       <div className="room-body">
         <div className="room-sources">

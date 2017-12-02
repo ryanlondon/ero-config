@@ -7,13 +7,13 @@ const Sources = (props) => {
     return <Source 
       key={i}
       name={source.name} 
-      deleteSource={props.deleteSource}
+      delete={props.delete}
     />
   });
 
   return (
     <div className="sources">
-      <SourceForm addSource={props.addSource} /> 
+      <SourceForm add={props.add} /> 
       {sources}
     </div>
   );

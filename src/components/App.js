@@ -4,7 +4,7 @@ import axios from 'axios';
 import Header from './Header';
 import Rooms from './room-components/Rooms';
 import Sources from './source-components/Sources';
-// import Devices from './device-components/Devices';
+import Devices from './device-components/Devices';
 
 class App extends React.Component {
   constructor() {
@@ -25,37 +25,25 @@ class App extends React.Component {
         this.setState({ [route]: res.data });
       });
     };
-
-    this.addRoom = (roomName) => {
-      axios.post('/api/rooms', {
-        name: roomName,
-      })
-      .then(() => {
-        this.getAll('rooms');
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    };
-
-    this.deleteRoom = (roomName) => {
-      axios.delete('api/rooms', {
-        params: { name: roomName },
-      })
-      .then(() => {
-        this.getAll('rooms');
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    };
     
-    this.addSource = (sourceName) => {
-      axios.post('api/sources', {
-        name: sourceName,
+    this.add = (route, name) => {
+      axios.post('api/' + route, {
+        name: name,
       })
       .then(() => {
-        this.getAll('sources');
+        this.getAll(route);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    };
+
+    this.delete = (route, name) => {
+      axios.delete('api/' + route, {
+        params: { name: name },
+      })
+      .then(() => {
+        this.getAll(route);
       })
       .catch((err) => {
         console.error(err);
@@ -65,6 +53,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getAll('rooms');
+    this.getAll('sources');
+    this.getAll('devices');
   }
 
   render() {
@@ -75,32 +65,37 @@ class App extends React.Component {
           <div className="main">
             <Route path="/" exact 
               render={() => (
-                <Rooms 
+                <Rooms
                   rooms={this.state.rooms} 
-                  addRoom={this.addRoom} 
-                  deleteRoom={this.deleteRoom}
+                  add={this.add} 
+                  delete={this.delete}
                 />
               )} 
             />
             <Route path="/sources" exact
               render={() => (
-                <Sources 
+                <Sources
                   sources={this.state.sources}
-                  addSource={this.addSource}
-                  deleteSource={this.deleteSource}
+                  add={this.add}
+                  delete={this.delete}
                 />
               )}
             />
-            <Route path="/devices" component={Devices} />
+            <Route path="/devices" exact
+              render={() => (
+                <Devices
+                  devices={this.state.devices}
+                  add={this.add}
+                  delete={this.delete}
+                />
+              )}
+              
+            />
           </div>
         </div>
       </BrowserRouter>
     );
   }
-}
-
-const Devices = () => {
-  return <div>Devices</div>;
 }
 
 export default App;

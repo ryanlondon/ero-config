@@ -13,6 +13,7 @@ $room-color: #3a3335;
 
 $primary-font-stack: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
+$form-height: 25px;
 $document-padding: 20px;
 
 //******************************************************* Imports ****//
@@ -38,4 +39,26 @@ button {
 
 input:focus {
   outline: 0;
+}
+
+.form {
+  display: flex;
+  font-size: 1.2rem;
+  input {
+    flex: 3;
+    padding-left: 8px;
+    height: $form-height;
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+  button {
+    flex: 1;
+    background-color: rgb(78, 119, 68);
+    color: $light-text;
+    display: inline-block;
+    font-size: 0.9rem;
+    &:hover {
+      background-color: rgb(103, 141, 93);
+    }
+  }
 }
