@@ -6,7 +6,10 @@ const Device = model.Device;
 const roomController = {};
 
 roomController.getAllRooms = (next) => {
-  Room.find({}, next);
+  Room.find({})
+  .populate('sources', ['name'])
+  .populate('devices', ['name'])
+  .exec(next);
 };
 
 roomController.addRoom = (req, res, next) => {
@@ -45,12 +48,11 @@ roomController.getItem = (req, res, next) => {
 };
 
 roomController.subscribeToItem = (req, res, next) => {
-  console.log(res.locals.item);
-  Room.findOne({ name: req.roomName }, (err, room) => {
-    res.status(200).json(room);
-    next();
+  Room.findOne({ name: req.body.roomName }, (err, room) => {
+    if (err) console.error('Error finding room during subscribe:', err);
+    room[req.body.type].push(res.locals.item);
+    room.save(next);
   });
 };
-
 
 module.exports = roomController;

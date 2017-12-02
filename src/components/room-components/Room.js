@@ -2,12 +2,22 @@ import React from 'react';
 
 const Room = (props) => {
 
+  console.log(props.subscribedSources, props.subscribedDevices);
+
   const sources = props.sources.map((source, i) => {
     return <option key={i} value={source.name}>{source.name}</option>;
   });
 
   const devices = props.devices.map((device, i) => {
     return <option key={i} value={device.name}>{device.name}</option>;
+  });
+
+  const subscribedSources = props.subscribedSources.map((source, i) => {
+    return <li key={i} className="room-item">{source.name}<button>Delete</button></li>
+  });
+
+  const subscribedDevices = props.subscribedDevices.map((device, i) => {
+    return <li key={i} className="room-item">{device.name}<button>Delete</button></li>
   });
 
   const handleSelect = (e, type) => {
@@ -28,9 +38,7 @@ const Room = (props) => {
             {sources}
           </select>
           <ul className="room-items">
-            <li className="room-item">Sonos<button>Delete</button></li>
-            <li className="room-item">DirecTV<button>Delete</button></li>
-            <li className="room-item">Bluray<button>Delete</button></li>
+            {subscribedSources}
           </ul>
         </div>
         <div className="room-devices">
@@ -40,9 +48,7 @@ const Room = (props) => {
             {devices}
           </select>
           <ul className="room-items">
-            <li className="room-item">Climate<button>Delete</button></li>
-            <li className="room-item">Security<button>Delete</button></li>
-            <li className="room-item">Lights<button>Delete</button></li>
+            {subscribedDevices}
           </ul>
         </div>
       </div>

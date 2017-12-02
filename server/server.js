@@ -85,11 +85,10 @@ router.route('/devices')
 router.route('/roomSubscribe')
   .put(
     roomController.getItem,
-    // roomController.subscribeToItem,
+    roomController.subscribeToItem,
     (req, res) => {
       res.status(200).json({ message: 'Room subscribed to item' });
     }
   );
-
 
 app.use('/api', router).listen(3000);

@@ -7,6 +7,8 @@ const Rooms = (props) => {
     return <Room 
       key={i}
       name={room.name}
+      subscribedSources={room.sources}
+      subscribedDevices={room.devices}
       sources={props.sources}
       devices={props.devices}
       delete={props.delete}

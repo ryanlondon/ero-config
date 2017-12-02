@@ -57,7 +57,7 @@ class App extends React.Component {
         itemName: itemName,
       })
       .then(() => {
-        console.log(`${roomName} subscribed to ${type} => ${itemName}`)
+        this.getAll('rooms');
       })
       .catch((err) => {
         console.error(err);
